@@ -4,7 +4,7 @@ set -e
 
 readonly CWD=$PWD
 readonly OS=$(uname)
-readonly LIBSODIUM_VERSION="1.0.17"
+readonly LIBSODIUM_VERSION="1.0.18"
 
 test -d tmp/libsodium || mkdir -p tmp/libsodium
 
