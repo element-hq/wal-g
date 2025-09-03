@@ -87,9 +87,12 @@ func deltaFetchRecursionOld(backup Backup, folder storage.Folder, dbDataDirector
 			*(sentinelDto.IncrementFrom),
 			*(sentinelDto.IncrementFromLSN),
 			*(sentinelDto.BackupStartLSN))
+
+		return backup.unwrapToEmptyDirectory(dbDataDirectory, filesToUnwrap, false, extractProv)
 	}
 
-	return backup.unwrapToEmptyDirectory(dbDataDirectory, filesToUnwrap, false, extractProv)
+	tracelog.InfoLogger.Printf("Not unwrapping full base-backup, %v is here", dbDataDirectory)
+	return nil
 }
 
 func GetPgFetcherOld(dbDataDirectory, fileMask, restoreSpecPath string,
