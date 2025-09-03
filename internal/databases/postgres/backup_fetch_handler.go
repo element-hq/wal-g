@@ -87,9 +87,9 @@ func deltaFetchRecursionOld(backup Backup, folder storage.Folder, dbDataDirector
 			*(sentinelDto.IncrementFrom),
 			*(sentinelDto.IncrementFromLSN),
 			*(sentinelDto.BackupStartLSN))
-	}
 
-	return backup.unwrapToEmptyDirectory(dbDataDirectory, filesToUnwrap, false, extractProv)
+		return backup.unwrapToEmptyDirectory(dbDataDirectory, filesToUnwrap, false, extractProv)
+	}
 }
 
 func GetPgFetcherOld(dbDataDirectory, fileMask, restoreSpecPath string,
